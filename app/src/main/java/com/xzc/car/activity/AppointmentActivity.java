@@ -4,6 +4,8 @@ package com.xzc.car.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,6 +32,7 @@ public class AppointmentActivity extends AppCompatActivity {
     //封装联系人对象
     private  CarAdapter carsAdapter;
     List<Car> list=new ArrayList();
+    private Button btn_mine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class AppointmentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_appointment);
 
         listView=findViewById(R.id.LV_apt);
+        btn_mine=findViewById(R.id.btn_mine);
 
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
@@ -96,7 +100,13 @@ public class AppointmentActivity extends AppCompatActivity {
         for (Car car:list){
             System.out.println(car.getCarType());
         }
-
+    btn_mine.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(AppointmentActivity.this,MyActivity.class);
+            startActivity(intent);
+        }
+    });
 
     }
 }
