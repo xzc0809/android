@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.HomeActivity"></activity>
+        <activity android:name=".activity.OverActivity"></activity>
+        <activity android:name=".activity.NowActivity" />
+        <activity android:name=".activity.AllActivity" />
+        <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.HTTPtestActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.AppointmentActivity" />

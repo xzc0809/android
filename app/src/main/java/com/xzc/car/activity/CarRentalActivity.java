@@ -20,7 +20,7 @@ public class CarRentalActivity extends Activity {
     /**
      * 时间选择器
      */
-    int mYear, mMonth, mDay;
+    int mYear, mMonth, mDay,mM,mShi,mFen;
     Button btn,btn_2,btn_3,btn_4;
     TextView dateDisplay,dateDisplay_2,dateDisplay_3,dateDisplay_4;
     final int DATE_DIALOG = 1,DATE_DIALOG2 = 2,DATE_DIALOG3 = 3,DATE_DIALOG4 = 4;

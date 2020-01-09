@@ -34,11 +34,11 @@
         android:layout_height="43dp">
 
         <TextView
-            android:text="车型："
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/textView8"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1.13"
+            android:text="车型："
             android:textSize="24sp" />
 
         <EditText
