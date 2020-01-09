@@ -18,6 +18,15 @@
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
+    <Button
+        android:id="@+id/btn_mine"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorPrimary"
+        android:text="我的"
+        android:textSize="24sp"></Button>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -34,12 +43,4 @@
         />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_mine"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorPrimary"
-        android:text="我的"
-        android:textSize="24sp"></Button>
 </LinearLayout>
