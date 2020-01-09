@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ public class AppointmentActivity extends AppCompatActivity {
     List<Car> list=new ArrayList();
     private Button btn_mine;
     private Integer id;
-    private Button btn_yvyue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,6 @@ public class AppointmentActivity extends AppCompatActivity {
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
-        btn_yvyue=findViewById(R.id.btn_yvyue);
         Intent intent=getIntent();
        id=intent.getIntExtra("id",0);
 
@@ -72,6 +72,15 @@ public class AppointmentActivity extends AppCompatActivity {
                     }
 
                     listView.setAdapter(carsAdapter);
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Button btn_yvyue=view.findViewById(R.id.btn_yvyue);
+                            
+                        }
+                    });
+
                     if (200==200){
                         Log.e("200","200");
                         //
