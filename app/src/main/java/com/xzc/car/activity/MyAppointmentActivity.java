@@ -3,6 +3,8 @@ package com.xzc.car.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,14 +27,17 @@ import java.util.List;
 public class MyAppointmentActivity extends AppCompatActivity {
     private ListView listView;
     //封装联系人对象
-    private  CarAdapter carsAdapter;
+    private  CarAdapter carAdapter;
     List<Car> list=new ArrayList();
     private Integer userId;
+    private Button btn_all;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointment);
-        Intent intent=getIntent();
+        btn_all=findViewById(R.id.btn_all);
+        listView=findViewById(R.id.LV_apt2);
+        final Intent intent=getIntent();
        userId =  intent.getIntExtra("id",0);
 
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
@@ -56,7 +61,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
                     /**
                      * 设置适配器的位置
                      */
-                    carsAdapter=new CarAdapter(MyAppointmentActivity.this,list);
+                    carAdapter=new CarAdapter(MyAppointmentActivity.this,list);
                     for (Car car:list){
 
                         System.out.println(car.getCarState());
@@ -64,7 +69,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
                         System.out.println(car.getCarId());
                     }
 
-                    listView.setAdapter(carsAdapter);
+                    listView.setAdapter(carAdapter);
                     if (200==200){
                         Log.e("200","200");
                         //
@@ -93,6 +98,12 @@ public class MyAppointmentActivity extends AppCompatActivity {
             }
         });
         networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+userId, null);
-
+    btn_all.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent1=new Intent(MyAppointmentActivity.this,AppointmentActivity.class);
+            startActivity(intent);
+        }
+    });
     }
 }
