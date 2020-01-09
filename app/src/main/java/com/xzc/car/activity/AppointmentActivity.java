@@ -113,6 +113,6 @@ public class AppointmentActivity extends AppCompatActivity {
         }
     });
 
-     
+
     }
 }
