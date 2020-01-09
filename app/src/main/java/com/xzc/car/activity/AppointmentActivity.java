@@ -77,7 +77,7 @@ public class AppointmentActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Button btn_yvyue=view.findViewById(R.id.btn_yvyue);
-                            
+
                         }
                     });
 
