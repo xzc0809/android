@@ -16,6 +16,8 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.AppointmentActivity" />
         <activity android:name=".activity.MyActivity"></activity>
+        <activity android:name=".activity.MyAppointmentActivity"></activity>
+        <activity android:name=".activity.WeActivity"></activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main" />
