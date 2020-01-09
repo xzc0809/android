@@ -69,7 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                                  */
 //                                startActivity(new Intent(LoginActivity.this,Admin.class));
                             }
-                            Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                            Intent intent=new Intent(LoginActivity.this,AppointmentActivity.class);
+                               /**
+                                * 传值
+                                */
                             intent.putExtra("userId",data);
                             startActivity(intent);
                                //

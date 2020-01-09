@@ -33,7 +33,7 @@ public class AppointmentActivity extends AppCompatActivity {
     private  CarAdapter carsAdapter;
     List<Car> list=new ArrayList();
     private Button btn_mine;
-
+    private Integer id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,9 @@ public class AppointmentActivity extends AppCompatActivity {
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
+
+        Intent intent=getIntent();
+       id=intent.getIntExtra("id",0);
 
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
@@ -104,6 +107,7 @@ public class AppointmentActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(AppointmentActivity.this,MyActivity.class);
+            intent.putExtra("id",id);
             startActivity(intent);
         }
     });

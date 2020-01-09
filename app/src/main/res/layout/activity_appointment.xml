@@ -18,21 +18,12 @@
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:id="@+id/imageView" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="540dp"
-        android:orientation="vertical">
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LV_apt"
-        />
-    </LinearLayout>
 
     <Button
         android:id="@+id/btn_mine"
@@ -42,4 +33,16 @@
         android:background="@color/colorPrimary"
         android:text="我的"
         android:textSize="24sp"></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="540dp"
+        android:orientation="vertical">
+        <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LV_apt"
+        />
+    </LinearLayout>
+
 </LinearLayout>
