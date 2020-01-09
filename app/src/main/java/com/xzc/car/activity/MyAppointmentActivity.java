@@ -101,8 +101,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
     btn_all.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent1=new Intent(MyAppointmentActivity.this,AppointmentActivity.class);
-            startActivity(intent);
+          finish();
         }
     });
     }
