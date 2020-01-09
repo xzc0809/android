@@ -52,6 +52,10 @@ public class MyAppointmentActivity extends AppCompatActivity {
                     JSONObject jsonObject = JSONObject.parseObject(resultString);
                     JSONArray data=jsonObject.getJSONArray("data");
                     list= JSON.parseArray(data.toJSONString(), Car.class);
+
+                    /**
+                     * 设置适配器的位置
+                     */
                     carsAdapter=new CarAdapter(MyAppointmentActivity.this,list);
                     for (Car car:list){
 
