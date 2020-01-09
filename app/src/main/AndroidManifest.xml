@@ -16,6 +16,7 @@
         <activity android:name=".activity.HTTPtestActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.AppointmentActivity" />
+        <activity android:name=".activity.MyActivity"></activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main" />
