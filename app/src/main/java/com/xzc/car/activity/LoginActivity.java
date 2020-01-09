@@ -61,15 +61,20 @@ public class LoginActivity extends AppCompatActivity {
                            JSONObject jsonObject=new JSONObject(resultString);
                            Integer status=jsonObject.getInt("status");
                            Integer data=jsonObject.getInt("data");
+
+                           Intent intent=new Intent(LoginActivity.this,AppointmentActivity.class);
                            if (status==200){
                                Log.e("200","200");
                             if(username.equals("admin")){
                                 /**
                                  * 需要修改处
                                  */
+
+                                intent.putExtra("userId",data);
+                                startActivity(intent);
 //                                startActivity(new Intent(LoginActivity.this,Admin.class));
                             }
-                            Intent intent=new Intent(LoginActivity.this,AppointmentActivity.class);
+
                                /**
                                 * 传值
                                 */
