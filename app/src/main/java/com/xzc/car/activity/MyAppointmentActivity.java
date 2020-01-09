@@ -84,7 +84,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), errorString, Toast.LENGTH_SHORT).show();
             }
         });
-        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/list", null);
+        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+"", null);
 
     }
 }

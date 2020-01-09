@@ -42,6 +42,9 @@ public class AppointmentActivity extends AppCompatActivity {
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
 
+        Intent intent=getIntent();
+        Integer id=intent.getIntExtra("id",0);
+
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
             @Override
