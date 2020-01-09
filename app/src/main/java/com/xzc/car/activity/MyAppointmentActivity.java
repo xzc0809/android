@@ -1,5 +1,6 @@
 package com.xzc.car.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -26,10 +27,13 @@ public class MyAppointmentActivity extends AppCompatActivity {
     //封装联系人对象
     private  CarAdapter carsAdapter;
     List<Car> list=new ArrayList();
+    private Integer userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointment);
+        Intent intent=getIntent();
+       userId =  intent.getIntExtra("id",0);
 
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
@@ -84,7 +88,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), errorString, Toast.LENGTH_SHORT).show();
             }
         });
-        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+"", null);
+        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+userId, null);
 
     }
 }
