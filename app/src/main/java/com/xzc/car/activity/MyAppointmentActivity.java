@@ -1,11 +1,8 @@
 package com.xzc.car.activity;
 
-import android.database.DataSetObserver;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,10 +27,14 @@ public class MyAppointmentActivity extends AppCompatActivity {
     //封装联系人对象
     private  CarAdapter carsAdapter;
     List<Car> list=new ArrayList();
+    private Integer userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointment);
+        Intent intent=getIntent();
+       userId =  intent.getIntExtra("id",0);
+
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
             @Override
@@ -51,6 +52,10 @@ public class MyAppointmentActivity extends AppCompatActivity {
                     JSONObject jsonObject = JSONObject.parseObject(resultString);
                     JSONArray data=jsonObject.getJSONArray("data");
                     list= JSON.parseArray(data.toJSONString(), Car.class);
+
+                    /**
+                     * 设置适配器的位置
+                     */
                     carsAdapter=new CarAdapter(MyAppointmentActivity.this,list);
                     for (Car car:list){
 
@@ -87,7 +92,7 @@ public class MyAppointmentActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), errorString, Toast.LENGTH_SHORT).show();
             }
         });
-        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+"", null);
+        networkRequestTool.getNetworkRequest("http://192.168.43.38:8080/myreserve?renUserId="+userId, null);
 
     }
 }
