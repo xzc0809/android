@@ -1,7 +1,11 @@
 package com.xzc.car.activity;
 
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,7 +34,6 @@ public class MyAppointmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_appointment);
-
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
             @Override
