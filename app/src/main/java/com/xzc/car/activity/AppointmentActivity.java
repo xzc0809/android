@@ -34,6 +34,7 @@ public class AppointmentActivity extends AppCompatActivity {
     List<Car> list=new ArrayList();
     private Button btn_mine;
     private Integer id;
+    private Button btn_yvyue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class AppointmentActivity extends AppCompatActivity {
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
-
+        btn_yvyue=findViewById(R.id.btn_yvyue);
         Intent intent=getIntent();
        id=intent.getIntExtra("id",0);
 
@@ -112,5 +113,6 @@ public class AppointmentActivity extends AppCompatActivity {
         }
     });
 
+     
     }
 }

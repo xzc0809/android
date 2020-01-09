@@ -64,11 +64,11 @@
         android:textSize="18sp" />
 
     <Button
-        android:text="预约"
+        android:id="@+id/btn_yvyue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_yvyue"
         android:layout_row="0"
-        android:layout_column="3" />
+        android:layout_column="1"
+        android:text="预约" />
 
 </GridLayout>
