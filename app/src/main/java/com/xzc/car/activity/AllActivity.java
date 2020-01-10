@@ -25,14 +25,14 @@ import java.util.List;
 public class AllActivity extends AppCompatActivity {
     private ListView listView;
     //封装联系人对象
-    private  CarAdapter carsAdapter;
+    private  MyReserveAdapter myReserveAdapter;
     List<Car> list=new ArrayList();
     private Button btn_mine,btn_all,btn_now,btn_over;
     private Integer id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment);
+        setContentView(R.layout.activity_all);
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
@@ -83,7 +83,7 @@ public class AllActivity extends AppCompatActivity {
                     JSONObject jsonObject = JSONObject.parseObject(resultString);
                     JSONArray data=jsonObject.getJSONArray("data");
                     list= JSON.parseArray(data.toJSONString(), Car.class);
-                    carsAdapter=new CarAdapter(AllActivity.this,list);
+                    myReserveAdapter=new MyReserveAdapter(AllActivity.this,list);
                     for (Car car:list){
 
                         System.out.println(car.getCarState());
@@ -91,7 +91,7 @@ public class AllActivity extends AppCompatActivity {
                         System.out.println(car.getCarId());
                     }
 
-                    listView.setAdapter(carsAdapter);
+                    listView.setAdapter(myReserveAdapter);
                     if (200==200){
                         Log.e("200","200");
                         //
@@ -124,14 +124,7 @@ public class AllActivity extends AppCompatActivity {
         for (Car car:list){
             System.out.println(car.getCarType());
         }
-        btn_mine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(AllActivity.this,MyActivity.class);
-                intent.putExtra("id",id);
-                startActivity(intent);
-            }
-        });
+
 
     }
 }

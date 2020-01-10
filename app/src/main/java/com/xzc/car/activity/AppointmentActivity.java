@@ -80,24 +80,18 @@ public class AppointmentActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Button btn_yvyue=view.findViewById(R.id.btn_yvyue);
-//                            btn_yvyue.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View v) {
-//
-//                                    Toast.makeText(getApplicationContext(), "预约成功！",Toast.LENGTH_LONG).show();
-//                                }
-//                            });
+
+                            final EditText et = new EditText(null);
+                            new AlertDialog.Builder(null).setTitle("请输入联系电话")
+                                    .setPositiveButton("确定预约", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            //按下确定键后的事件
+                                            Toast.makeText(getApplicationContext(), "预约成功！",Toast.LENGTH_LONG).show();
+                                        }
+                                    }).setNegativeButton("取消",null).show();
 
 
-//                            final EditText et = new EditText(null);
-//                            new AlertDialog.Builder(null).setTitle("请输入联系电话")
-//                                    .setPositiveButton("确定预约", new DialogInterface.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(DialogInterface dialogInterface, int i) {
-//                                            //按下确定键后的事件
-//                                            Toast.makeText(getApplicationContext(), "预约成功！",Toast.LENGTH_LONG).show();
-//                                        }
-//                                    }).setNegativeButton("取消",null).show();
 
                         }
                     });
