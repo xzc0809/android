@@ -62,7 +62,7 @@ public class OverAdapter extends BaseAdapter {
         View view;
         OverAdapter.ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.layout_apt, null);
+            view = LayoutInflater.from(context).inflate(R.layout.layout_apt3, null);
 
             viewHolder = new OverAdapter.ViewHolder();
             viewHolder.user_name = (TextView) view.findViewById(R.id.over_name);
@@ -79,7 +79,7 @@ public class OverAdapter extends BaseAdapter {
         viewHolder.user_name.setText(car.getCarType());
         viewHolder.car_id.setText(car.getCarNumber());
         viewHolder.car_xin.setText(car.getCarType());
-        viewHolder.btn_yvyue.setText("预约");
+        viewHolder.btn_yvyue.setText("已结束");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:m:s");
         Date date=car.getCarFreetimeend();
         viewHolder.no_time.setText(format.format(date));
