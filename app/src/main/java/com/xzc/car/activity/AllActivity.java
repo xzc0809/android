@@ -32,7 +32,7 @@ public class AllActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment);
+        setContentView(R.layout.activity_all);
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
@@ -124,14 +124,7 @@ public class AllActivity extends AppCompatActivity {
         for (Car car:list){
             System.out.println(car.getCarType());
         }
-        btn_mine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(AllActivity.this,MyActivity.class);
-                intent.putExtra("id",id);
-                startActivity(intent);
-            }
-        });
+
 
     }
 }
