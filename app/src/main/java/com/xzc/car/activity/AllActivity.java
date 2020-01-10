@@ -34,7 +34,7 @@ public class AllActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all);
 
-        listView=findViewById(R.id.LV_apt);
+        listView=findViewById(R.id.lv2_all);
         btn_mine=findViewById(R.id.btn_mine);
         btn_all=findViewById(R.id.button_all);
         btn_all.setOnClickListener(new View.OnClickListener() {
