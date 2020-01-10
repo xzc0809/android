@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.xzc.car.R;
@@ -14,15 +16,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CarAdater_shen {
+public class MyReserveAdapter extends BaseAdapter {
     private Context context;
     private List<Car> cars = new ArrayList<>();
 
-    public CarAdater_shen(List<Car> list) {
+    public MyReserveAdapter(List<Car> list) {
         this.cars=list;
     }
 
-    public CarAdater_shen(Context context, List<Car> cars) {
+    public MyReserveAdapter(Context context, List<Car> cars) {
         this.context = context;
         this.cars = cars;
     }
@@ -33,19 +35,20 @@ public class CarAdater_shen {
     }
 
     // 返回子项对象
-
+    @Override
     public Object getItem(int position) {
         return cars.get(position);
     }
 
     // 返回子项下标
-
+    @Override
     public long getItemId(int position) {
         return position;
     }
 
     // 创建 ViewHolder 类
     class ViewHolder {
+        Button btn_yvyue;
         TextView car_id;
         TextView user_name;
         TextView car_xin;
@@ -53,28 +56,30 @@ public class CarAdater_shen {
     }
 
     // 返回子项视图
-
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Car car = (Car) getItem(position);
         View view;
-        CarAdater_shen.ViewHolder viewHolder;
+        MyReserveAdapter.ViewHolder viewHolder;
         if (convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.layout_apt, null);
 
-            viewHolder = new CarAdater_shen.ViewHolder();
-            viewHolder.user_name = (TextView) view.findViewById(R.id.tv2_name);
-            viewHolder.car_id = (TextView) view.findViewById(R.id.tv2_p2);
-            viewHolder.car_xin = (TextView) view.findViewById(R.id.tv2_c2);
-            viewHolder.no_time = (TextView) view.findViewById(R.id.tv2_time2);
+            viewHolder = new MyReserveAdapter.ViewHolder();
+            viewHolder.user_name = (TextView) view.findViewById(R.id.tv_name);
+            viewHolder.car_id = (TextView) view.findViewById(R.id.tv_p2);
+            viewHolder.car_xin = (TextView) view.findViewById(R.id.tv_c2);
+            viewHolder.no_time = (TextView) view.findViewById(R.id.tv_time2);
+            viewHolder.btn_yvyue =  view.findViewById(R.id.btn_yvyue);
             view.setTag(viewHolder);
         } else {
             view = convertView;
-            viewHolder = (CarAdater_shen.ViewHolder) view.getTag();
+            viewHolder = (MyReserveAdapter.ViewHolder) view.getTag();
         }
 
         viewHolder.user_name.setText(car.getCarType());
         viewHolder.car_id.setText(car.getCarNumber());
         viewHolder.car_xin.setText(car.getCarType());
+        viewHolder.btn_yvyue.setText("预约");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:m:s");
         Date date=car.getCarFreetimeend();
         viewHolder.no_time.setText(format.format(date));

@@ -31,7 +31,7 @@
         android:text="车型"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_c2"
+        android:id="@+id/tv2_c2"
         android:layout_row="1"
         android:layout_column="3"
         android:textSize="18sp" />
