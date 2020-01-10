@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xzc.car.R;
 import com.xzc.car.beans.Car;
@@ -84,6 +85,13 @@ public class CarAdapter extends BaseAdapter {
         viewHolder.car_id.setText(car.getCarNumber());
         viewHolder.car_xin.setText(car.getCarType());
         viewHolder.btn_yvyue.setText("预约");
+        viewHolder.btn_yvyue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(context, "预约成功！",Toast.LENGTH_LONG).show();
+            }
+        });
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:m:s");
         Date date=car.getCarFreetimeend();
         viewHolder.no_time.setText(format.format(date));
