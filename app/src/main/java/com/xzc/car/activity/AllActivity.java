@@ -27,7 +27,7 @@ public class AllActivity extends AppCompatActivity {
     //封装联系人对象
     private  CarAdapter carsAdapter;
     List<Car> list=new ArrayList();
-    private Button btn_mine;
+    private Button btn_mine,btn_all,btn_now,btn_over;
     private Integer id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,32 @@ public class AllActivity extends AppCompatActivity {
 
         listView=findViewById(R.id.LV_apt);
         btn_mine=findViewById(R.id.btn_mine);
+        btn_all=findViewById(R.id.button_all);
+        btn_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AllActivity.this,AllActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_now=findViewById(R.id.button_now);
+        btn_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AllActivity.this,NowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_over=findViewById(R.id.button_over);
+        btn_over.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AllActivity.this,OverActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         Intent intent=getIntent();
         id=intent.getIntExtra("id",0);

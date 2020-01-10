@@ -29,7 +29,7 @@ public class MyActivity extends AppCompatActivity {
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyActivity.this,MyAppointmentActivity.class);
+                Intent intent = new Intent(MyActivity.this,AllActivity.class);
                 intent.putExtra("id",id);
                 startActivity(intent);
             }

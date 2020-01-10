@@ -1,12 +1,15 @@
 package com.xzc.car.activity;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -77,6 +80,18 @@ public class AppointmentActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Button btn_yvyue=view.findViewById(R.id.btn_yvyue);
+
+                            final EditText et = new EditText(null);
+                            new AlertDialog.Builder(null).setTitle("请输入联系电话")
+                                    .setPositiveButton("确定预约", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            //按下确定键后的事件
+                                            Toast.makeText(getApplicationContext(), "预约成功！",Toast.LENGTH_LONG).show();
+                                        }
+                                    }).setNegativeButton("取消",null).show();
+
+
 
                         }
                     });
