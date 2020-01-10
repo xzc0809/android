@@ -80,6 +80,7 @@ public class AppointmentActivity extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Button btn_yvyue=view.findViewById(R.id.btn_yvyue);
+                            btn_yvyue.setText("预约成功");
 
                             final EditText et = new EditText(null);
                             new AlertDialog.Builder(null).setTitle("请输入联系电话")
