@@ -41,7 +41,7 @@ public class OverActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_now=findViewById(R.id.button_now);
+        btn_now=findViewById(R.id.button3_now);
         btn_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +50,7 @@ public class OverActivity extends AppCompatActivity {
             }
         });
 
-        btn_over=findViewById(R.id.button_over);
+        btn_over=findViewById(R.id.button3_over);
         btn_over.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
