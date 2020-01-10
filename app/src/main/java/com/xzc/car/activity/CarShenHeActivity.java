@@ -25,7 +25,7 @@ import java.util.List;
 public class CarShenHeActivity extends AppCompatActivity {
     private ListView listView;
     //封装联系人对象
-    private  CarAdapter carsAdapter;
+    private  CarAdater_shen carsAdapter_shen;
     List<Car> list=new ArrayList();
     private Button btn_mine;
     private Integer id;
@@ -33,7 +33,7 @@ public class CarShenHeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_shen_he);
-
+        listView=findViewById(R.id.shen_he);
         NetworkRequestTool networkRequestTool = new NetworkRequestTool(new NetworkRequestTool.NetworkCallbackListener() {
 
             @Override
@@ -55,7 +55,7 @@ public class CarShenHeActivity extends AppCompatActivity {
                     /**
                      * 需要修改适配器的位置
                             */
-                    carsAdapter=new CarAdapter(CarShenHeActivity.this,list);
+                    carsAdapter_shen=new CarAdater_shen(CarShenHeActivity.this,list);
                     for (Car car:list){
 
                         System.out.println(car.getCarState());
@@ -66,7 +66,7 @@ public class CarShenHeActivity extends AppCompatActivity {
                     /**
                      * 需要修改适配器的位置
                      */
-                    listView.setAdapter(carsAdapter);
+                    listView.setAdapter(carsAdapter_shen);
                     if (200==200){
                         Log.e("200","200");
                         //

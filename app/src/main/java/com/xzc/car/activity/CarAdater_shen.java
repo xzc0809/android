@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.xzc.car.R;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CarAdater_shen {
+public class CarAdater_shen extends BaseAdapter {
     private Context context;
     private List<Car> cars = new ArrayList<>();
 
@@ -59,7 +60,7 @@ public class CarAdater_shen {
         View view;
         CarAdater_shen.ViewHolder viewHolder;
         if (convertView == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.layout_apt, null);
+            view = LayoutInflater.from(context).inflate(R.layout.layout_apt2, null);
 
             viewHolder = new CarAdater_shen.ViewHolder();
             viewHolder.user_name = (TextView) view.findViewById(R.id.tv2_name);
