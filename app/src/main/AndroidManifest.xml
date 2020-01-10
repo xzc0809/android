@@ -21,6 +21,8 @@
         <activity android:name=".activity.WeActivity"></activity>
         <activity android:name=".activity.AllActivity"></activity>
         <activity android:name=".activity.CarRentalActivity"></activity>
+        <activity android:name=".activity.NowActivity"></activity>
+        <activity android:name=".activity.OverActivity"></activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main" />

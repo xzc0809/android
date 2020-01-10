@@ -13,21 +13,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_all"
+            android:id="@+id/button2_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="全部预约" />
 
         <Button
-            android:id="@+id/button_now"
+            android:id="@+id/button2_now"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="正在预约" />
 
         <Button
-            android:id="@+id/button_over"
+            android:id="@+id/button2_over"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
