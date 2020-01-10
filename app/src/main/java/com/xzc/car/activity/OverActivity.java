@@ -32,6 +32,7 @@ public class OverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_over);
+        listView=findViewById(R.id.lv4_all);
         btn_all=findViewById(R.id.button_all);
         btn_all.setOnClickListener(new View.OnClickListener() {
             @Override

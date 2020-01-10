@@ -33,6 +33,7 @@ public class NowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now);
+        listView=findViewById(R.id.lv3_all);
         btn_all=findViewById(R.id.button2_all);
         btn_all.setOnClickListener(new View.OnClickListener() {
             @Override
